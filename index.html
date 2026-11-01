@@ -6,9 +6,9 @@
 <title>Vinush M N | MBA Student, Finance &amp; Marketing</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f4f5f2;--surface:#fff;--ink:#1f2a37;--muted:#5d6978;--line:#dfe3e0;--accent:#2f5d7c;--accent-soft:#e3ecf2;--sage:#7f9a8a;--sh:0 1px 2px rgba(31,42,55,.05),0 8px 24px rgba(31,42,55,.06);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161c22;--surface:#1f2730;--ink:#e8ecef;--muted:#9aa6b2;--line:#2c3743;--accent:#8fb7d1;--accent-soft:#25384a;--sage:#8fae9c;--sh:none;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#161c22;--surface:#1f2730;--ink:#e8ecef;--muted:#9aa6b2;--line:#2c3743;--accent:#8fb7d1;--accent-soft:#25384a;--sage:#8fae9c;--sh:none;color-scheme:dark}
+:root{--bg:#f6f5ee;--surface:#fffefa;--ink:#1d2b22;--muted:#5c6b60;--line:#e0e0d2;--accent:#2f6b4a;--accent-soft:#e4eedf;--sage:#b8923a;--sh:0 1px 2px rgba(29,43,34,.05),0 8px 24px rgba(29,43,34,.07);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121a15;--surface:#1a251e;--ink:#ecefe6;--muted:#9fada3;--line:#2a382e;--accent:#7fc29a;--accent-soft:#223a2c;--sage:#d4ae5a;--sh:none;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121a15;--surface:#1a251e;--ink:#ecefe6;--muted:#9fada3;--line:#2a382e;--accent:#7fc29a;--accent-soft:#223a2c;--sage:#d4ae5a;--sh:none;color-scheme:dark}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth;height:100%}
 *{box-sizing:border-box}
 body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font:400 16px/1.65 Inter,system-ui,sans-serif}
@@ -26,9 +26,12 @@ nav a{padding:7px 13px;border-radius:999px;text-decoration:none;color:var(--mute
 nav a:hover{color:var(--ink)}nav a.on{background:var(--accent-soft);color:var(--accent);font-weight:500}
 main{max-width:1040px;margin:auto;padding:48px 20px 72px}
 .page{padding:72px 0}.page+.page{border-top:1px solid var(--line)}#home{padding-top:16px}
-.page>*{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
-.page.on>*{opacity:1;transform:none}
-.page.on>*:nth-child(2){transition-delay:.1s}.page.on>*:nth-child(3){transition-delay:.2s}.page.on>*:nth-child(4){transition-delay:.3s}
+.page>*{opacity:0;filter:blur(8px);transform:scale(.97);transition:opacity .9s ease,filter .9s ease,transform .9s ease}
+.page.on>*{opacity:1;filter:none;transform:none}
+h2::after{content:"";display:block;height:3px;width:0;margin-top:10px;border-radius:3px;background:var(--sage);transition:width 1s ease .4s}.page.on h2::after{width:56px}
+.page.on :is(.card,.it,.tags span){animation:slide .7s ease both}
+.page.on :is(.card,.it,.tags span):nth-child(2){animation-delay:.15s}.page.on :is(.card,.it,.tags span):nth-child(3){animation-delay:.3s}.page.on :is(.card,.it,.tags span):nth-child(n+4){animation-delay:.45s}
+@keyframes slide{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
 .hero{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center;min-height:62vh}
 .photo{position:relative;justify-self:center;width:min(100%,340px)}
 .photo img{width:100%;aspect-ratio:1/1.1;object-fit:cover;object-position:top;border-radius:48% 52% 46% 54%/52% 46% 54% 48%;display:block;box-shadow:var(--sh);animation:morph 14s ease-in-out infinite}
@@ -69,7 +72,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 
 footer{border-top:1px solid var(--line);text-align:center;padding:22px 20px;color:var(--muted);font-size:.88rem}
 #theme{background:none;border:1px solid var(--line);color:var(--ink);width:36px;height:36px;border-radius:50%;cursor:pointer;flex:none}
 @media (max-width:760px){html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 110px)}.page{padding:56px 0}.hero,.split{grid-template-columns:1fr;gap:32px}.hero{min-height:0}.photo{order:-1;width:220px}.bar{flex-wrap:wrap}nav{order:3;width:100%}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.page>*{opacity:1;transform:none}*{animation:none!important;transition:none!important}.page.on .fill{width:var(--w)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.page>*{opacity:1;transform:none;filter:none}h2::after{width:56px}*{animation:none!important;transition:none!important}.page.on .fill{width:var(--w)}}
 </style>
 </head>
 <body>
@@ -87,7 +90,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:22px 20px;colo
 <div>
 <p class="sub">MBA student, Finance and Marketing</p>
 <h1>Hi, I’m Vinush.</h1>
-<p class="lead">I’m a first-year MBA student at MS Ramaiah Institute of Technology, building a career in finance and marketing on a foundation in commerce and taxation.</p>
+<p class="lead">I’m an MBA student at MS Ramaiah Institute of Technology, building a career in finance and marketing on a foundation in commerce and taxation.</p>
 <div class="btns">
 <a class="btn pri" href="https://www.linkedin.com/in/vinush-m-n-740047342" target="_blank" rel="noopener">View LinkedIn</a>
 <a class="btn" href="mailto:vinushmn@gmail.com">Send email</a>
@@ -112,7 +115,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:22px 20px;colo
 <section class="page" id="education" data-page>
 <h2>Education</h2>
 <div class="tl">
-<div class="it"><div class="yr">2025 – 2027</div><h3>Master of Business Administration</h3><p>MS Ramaiah Institute of Technology. Currently in 1st year, 2nd semester.</p><span class="chip">CGPA 7.36 / 10</span></div>
+<div class="it"><div class="yr">2025 – 2027</div><h3>Master of Business Administration</h3><p>MS Ramaiah Institute of Technology. Currently pursuing.</p><span class="chip">CGPA 7.36 / 10</span></div>
 <div class="it"><div class="yr">2022 – 2025</div><h3>Bachelor of Commerce</h3><p>SDM College, Ujire. Tax procedure, covering Income Tax and Goods and Services Tax.</p><span class="chip">CGPA 7.38 / 10</span></div>
 <div class="it"><div class="yr">2020 – 2022</div><h3>Pre-University, Commerce with Computer Science</h3><p>BGS Science and Commerce PU College, Belur.</p><span class="chip">90%</span></div>
 </div>
